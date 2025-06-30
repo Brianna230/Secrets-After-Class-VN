@@ -12,11 +12,19 @@
     <div id ="title-screen">
         <img src ="secretstitle.png" alt="Gametitle" id="game-logo">
         <div id="menu">
-          <button>Start Game</button>
+          <button onclick="startGame()">Start Game</button>
           <button>Settings</button>
         </div>
     </div>
-
+        <div id="game-screen" style="display:none ;">
+        <!-- <img id="background" src="outsideoftheclassroom.jpg"  alt="background"> -->
+        <img id="sprite-left" src="" class="sprite" alt="Himeko">
+        
+        <div id="diaglogue-box">
+            <p id ="character-name">Himeko</p>
+            <p id ="dialogue-text"></p>
+            <button onclick="nextline()">Next</button>
+        </div>
     
 </body>
 </html>
