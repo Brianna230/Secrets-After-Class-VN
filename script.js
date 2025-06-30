@@ -11,11 +11,9 @@ window.addEventListener("click",()=>{
 function startGame(){
     document.getElementById("title-screen").style.display = "none";
     document.getElementById("game-screen").style.display ="block";
-    document.body.style.backgroundImage ="url(outsideoftheclassroom.jpg)";
-    document.body.style.backgroundSize="cover";
-    document.body.style.backgroundRepeat="no-repeat";
-    document.body.style.backgroundPosition="center";
+    document.body.style.background ="url(outsideoftheclassroom.jpg) no-repeat center / cover";
     document.body.style.height="100vh";
     document.body.style.margin="0";
 
 }
+
