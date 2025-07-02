@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secrets: After Class</title>
     <link rel ="stylesheet" href ="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <audio id = "title-music" src="love-romantic-music-instrumental-9407.mp3" loop></audio>
@@ -18,10 +18,12 @@
     </div>
         <div id="game-screen" style="display:none ;">
         <!-- <img id="background" src="outsideoftheclassroom.jpg"  alt="background"> -->
-        <img id="sprite-left" src="" class="sprite" alt="Himeko">
-        
+      <div id="sprite-container">
+        <img id="sprite-right" src="" class="sprite" alt="right-chara" >
+        <img id="sprite-left" src="" class="sprite" alt="left-chara">
+      </div>
         <div id="dialogue-box">
-            <p id ="character-name">Himeko</p>
+            <p id ="character-name"></p>
             <p id ="dialogue-text"></p>
             <div class ="button-wrapper">
             <button onclick="nextline()">Next</button>

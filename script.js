@@ -17,3 +17,32 @@ function startGame(){
 
 }
 
+const dialoguePrologue =[{ name:"Himeko",
+    text:"(It's another school day)",
+    rightSprite:"HimekoSprites/himeneutralfullbody.png",
+    leftSprite: ""
+
+},{
+    name:"Saki",
+    text:"You're here early again!",
+    rightSprite:"HimekoSprites/himeblushfullbody.png",
+    leftSprite:"SakiSprites/Sakihappyfullbody.png"
+}]
+
+let currentLine = 0;
+
+function nextline(){
+    if(currentLine < dialoguePrologue.length){
+        const line = dialoguePrologue[currentLine];
+        //put text into dialogue box
+        document.getElementById("character-name").innerText = line.name;
+        document.getElementById("dialogue-text").innerText = line.text;
+        //show sprites
+        document.getElementById("sprite-left").src = line.leftSprite || "";
+        document.getElementById("sprite-right").src = line.rightSprite || "";
+        currentLine++;
+
+    }else{
+        document.getElementById("dialogue-box");
+    }
+}
