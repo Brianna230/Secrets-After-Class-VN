@@ -15,6 +15,8 @@ function startGame(){
     document.body.style.height="100vh";
     document.body.style.margin="0";
 
+     nextline()
+
 }
 
 const dialoguePrologue =[{ name:"Himeko",
