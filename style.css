@@ -121,15 +121,18 @@ body{
 }
 
 #sprite-right{
-    position: absolute;
-    bottom: -100px; 
-    left: 50px;
+   left:50px
 }
 
 #sprite-left{
-    position: absolute;
-    bottom: -100px;
-    right:50px;
+    right: 50px;
+}
+#sprite-left,#sprite-right{
+    position:absolute;
+    bottom: -330px;
+    max-height: none;
+    transform: scale(1.8);
+    z-index: 5;
 }
 
 #choice-box{
