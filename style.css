@@ -2,11 +2,18 @@ body{
     margin: 0;
     padding: 0;
     background: linear-gradient(to bottom,#33001a, #660033);
-    overflow-x: hidden;
+
 }
 
 #title-screen{
     padding-top: 5vh;
+}
+
+#game-screen{
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
 }
 
 #game-logo{
@@ -80,7 +87,7 @@ body{
 
 #character-name{
     position: absolute;
-    bottom:85%;
+    bottom:90%;
     left:20px;
     font-family:"Georgia",serif;
     font-size:22px;
@@ -115,12 +122,35 @@ body{
 
 #sprite-right{
     position: absolute;
-    bottom: 10px; 
+    bottom: -100px; 
     left: 50px;
 }
 
 #sprite-left{
     position: absolute;
-    bottom: 10px;
+    bottom: -100px;
     right:50px;
+}
+
+#choice-box{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    margin-top:20px;
+}
+.choice-btn{
+    background-color: #ffb6e1;
+    border: 2px solid #ffb6c1;
+    color:#2d2d2d;
+    padding:10px 20px;
+    font-family: "Georgia",serif;
+    font-size:16px;
+    cursor: pointer;
+    position: relative;
+    z-index: 20;
+    transition: all 0.2s ease-in-out;
+}
+.choice-btn:hover{
+    background-color: #ffa3b1;
+    color:white
 }
