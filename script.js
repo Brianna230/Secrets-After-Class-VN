@@ -64,19 +64,28 @@ const dialoguePrologue =[
     name:"Himeko",
     text:"(I smiled to her.Maybe she's not so bad after all)",
     rightSprite:"HimekoSprites/himehappyfullbody.png",
-    leftSprite:"SakiSprites/Sakihappyfullbody.png"
+    leftSprite:"SakiSprites/Sakihappyfullbody.png",
+    nextIndex: 9
 },{
     name:"Himeko",
     text:"(I didn't know what to say, so I just stayed quiet)",
     rightSprite:"HimekoSprites/himeneutralfullbody.png",
-    leftSprite:"SakiSprites/Sakisadfullbody.png"
+    leftSprite:"SakiSprites/Sakisadfullbody.png",
+    nextIndex: 9
+},{
+    name:"Saki",
+    text:"Anyway, let's grab our seat before the bell rings",
+    rightSprite:"HimekoSprites/himeneutralfullbody.png",
+    leftSprite:"SakiSprites/Sakihappyfullbody.png",
 }
 
 ]
 
 let currentLine = 0;
 
+
 function nextline(){
+    const nextButton = document.getElementById("next-button")
     if(currentLine < dialoguePrologue.length){
         const line = dialoguePrologue[currentLine];
         if(line.choices){
@@ -93,6 +102,7 @@ function nextline(){
                 }
 
             });
+            
            return;
                 
         }
@@ -103,17 +113,36 @@ function nextline(){
         //show sprites
         document.getElementById("sprite-left").src = line.leftSprite || "";
         document.getElementById("sprite-right").src = line.rightSprite || "";
-        currentLine++;
+        document.getElementById("dialogue-box").style.display="block";
+        // currentLine++;
 
-    
+        document.getElementById("next-button").style.display ="inline-block"
+
     }
+
 }
 
 function chooseOption(index){
-    const choice = dialoguePrologue[currentLine].choices[index];
+   const line = dialoguePrologue[currentLine];
+   const choice = line.choices[index]
+    if(!choice){
+        console.log("Invalid choice index" , index)
+        return;
+    }
     currentLine = choice.nextIndex;
     document.getElementById("choice-box").style.display = "none";
     document.getElementById("dialogue-box").style.display ="block";
+    document.getElementById("next-button").style.display="inline-block"
     nextline();
-
+    
 }
+document.getElementById("next-button").onclick=()=>{
+    const line = dialoguePrologue[currentLine];
+    if(line.nextIndex !== undefined){
+        currentLine = line.nextIndex
+    }else{
+    currentLine++;
+    }
+    nextline()
+}
+
