@@ -77,7 +77,63 @@ const dialoguePrologue =[
     text:"Anyway, let's grab our seat before the bell rings",
     rightSprite:"HimekoSprites/himeneutralfullbody.png",
     leftSprite:"SakiSprites/Sakihappyfullbody.png",
-}
+},{
+    name:"Himeko",
+    text:"(We entered the classroom.Just the usual chatter and shuffling of the seats)",
+    rightSprite:"HimeSprites/himeneutralfullbody.png",
+    leftSprite:"",
+    background:"Classroom.jpg"
+},{
+    name:"Himeko",
+    text:"(And there he was.Toji... looking out the window like always.)",
+    rightSprite:"HimekoSprites/himeblushfullbody.png",
+    leftSprite:"",
+},{
+    name:"Himeko",
+    text:"(He never talks much... but there's something about him)",
+    rightSprite:"HimekoSprites/himeshyfullbody.png",
+    leftSprite:""
+
+},{
+    name:"Saki",
+    text:"You know, Toji's always zoning out like he's in another world. What's his deal?",
+    rightSprite:"HimekoSprites/himepanicfullbody.png",
+    leftSprite:"SakiSprites/Sakineutralfullbody.png"
+},{
+    choices:[{text:"Change the subject",nextIndex: 15},
+             {text:"Ask what she think of Toji", nextIndex: 17}
+    ]
+    //Change the subject path
+},{
+    name:"Himeko",
+    text:"Anyway, did you finish the math homework? I totally blanked on question five",
+    rightSprite:"HimekoSprites/himepanicfullbody.png",
+    leftSprite:"SakiSprites/SakiSadfullbody.png",
+    nextIndex:16
+  },{
+    name:"Saki",
+    text:"ugh dont remind me. I stayed way too late trying to figure that one out",
+    rightSprite:"HimekoSprites/himesweatingfullbody.png",
+    leftSprite:"SakiSprites/Sakineutralfullbody.png",
+    nextIndex:19
+
+    // Ask what she think of toji path
+  },{
+    name:"Himeko",
+    text:"what do you think of toji?",
+    rightSprite:"HimekoSprites/himeblushfullbody.png",
+    leftSprite:"SakiSprites/Sakineutralfullbody.png",
+    nextIndex:18
+
+  },{
+    name:"Saki",
+    text:"Toji? Hmm... He's cool, I guess. Kind of mysterious",
+    rightSprite:"HimekoSprites/himepanicfullbody.png",
+    leftSprite:"SakiSprites/Sakineutralfullbody.png",
+
+
+  }
+
 
 ]
 
@@ -88,6 +144,9 @@ function nextline(){
     const nextButton = document.getElementById("next-button")
     if(currentLine < dialoguePrologue.length){
         const line = dialoguePrologue[currentLine];
+        if(line.background){
+            document.body.style.background =`url('${line.background}') no-repeat center / cover`
+        }
         if(line.choices){
             document.getElementById("dialogue-box").style.display ="none";
             document.getElementById("choice-box").style.display="flex";

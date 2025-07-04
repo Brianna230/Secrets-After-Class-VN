@@ -92,7 +92,7 @@ body{
     font-family:"Georgia",serif;
     font-size:22px;
     font-weight: bold;
-    color:#dc8794;
+    color:#a44654;
     padding: 8px 15px;
     background-color: rgba(0,0,0,0,0.6);
     border-radius:8px 15px;
@@ -156,4 +156,9 @@ body{
 .choice-btn:hover{
     background-color: #ffa3b1;
     color:white
+}
+
+.choice-btn:active{
+    transform: scale(0.98);
+    box-shadow: none;
 }
